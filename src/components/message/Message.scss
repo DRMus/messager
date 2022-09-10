@@ -1,0 +1,214 @@
+@import "~styles/variables";
+
+.message {
+  $self: &;
+
+  &--content {
+    display: flex;
+    max-width: 400px;
+    margin-bottom: 15px;
+  }
+
+  &--avatar {
+    display: flex;
+    flex-direction: column-reverse;
+    img {
+      border-radius: 50%;
+      width: 33px;
+      height: 33px;
+      margin-right: 10px;
+      margin-bottom: 23px;
+    }
+  }
+
+  &--bubble {
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+    background-color: $blue;
+    box-shadow: 2px 4px 4px rgba(56, 167, 251, 0.25);
+    border-radius: 15px 15px 15px 0px;
+  }
+
+  &--message {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  &--text {
+    color: $white;
+    line-height: 20px;
+  }
+
+  &--info {
+    text-align: left;
+  }
+
+  &--date {
+    margin-top: 10px;
+    font-size: 12px;
+    color: $gray;
+  }
+
+  &--isme {
+    display: flex;
+    flex-direction: row-reverse;
+
+    #{$self}--avatar {
+      display: none;
+      img {
+        margin-right: 0;
+        margin-left: 10px;
+      }
+    }
+
+    #{$self}--message {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    #{$self}--info {
+      text-align: right;
+    }
+
+    #{$self}--content {
+      flex-direction: row-reverse;
+    }
+
+    #{$self}--bubble {
+      text-align: right;
+      background-color: #fff;
+      border: 1px solid #cfcfcf;
+      border-radius: 15px 15px 0px 15px;
+      box-shadow: none;
+
+      #{$self}--text {
+        color: black;
+      }
+    }
+    &--attached {
+      #{$self}--attachments {
+        #{$self}--bubble {
+          border-radius: 0 0 0 15px;
+        }
+      }
+    }
+  }
+
+  &--attached {
+    #{$self}--attachments {
+      display: flex;
+      flex: 1 0 0;
+      flex-wrap: wrap;
+      border-radius: 15px 15px 0 0;
+      overflow: hidden;
+      &-item {
+        flex-basis: 50%;
+        flex-grow: 1;
+        height: 200px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &--text-none {
+        border-radius: 15px;
+      }
+    }
+    #{$self}--bubble {
+      border-radius: 0 0 15px 0;
+    }
+  }
+
+  &--typing {
+    padding: 10px 15px;
+    background-color: $brightBlue;
+    #{$self}--points {
+      span {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: $white;
+        display: inline-block;
+        opacity: 0.4;
+      }
+      span:not(:nth-child(1)) {
+        margin-left: 5px;
+      }
+      span:nth-child(1) {
+        animation: 1s blink infinite 0.333s;
+      }
+      span:nth-child(2) {
+        animation: 1s blink infinite 0.666s;
+      }
+      span:nth-child(3) {
+        animation: 1s blink infinite 0.999s;
+      }
+    }
+  }
+
+  &--audio {
+    $audio: &;
+
+    width: 250px;
+    height: 100%;
+    padding: 0 5px;
+    &--progress {
+      background-color: $audioBlue;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: width 0.3s ease-out;
+    }
+
+    &--info {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      #{$audio}--wave {
+        width: 140px;
+        height: 40px;
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      #{$audio}--btn {
+        button {
+          width: 30px;
+          height: 30px;
+          border: none;
+          border-radius: 50%;
+          background-color: $darkenBlue;
+
+          img {
+            height: 60%;
+            width: 60%;
+          }
+        }
+      }
+
+      #{$audio}--time {
+        color: $white;
+        font-weight: bold;
+        font-size: 12px;
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+/* Animations */
+
+@keyframes blink {
+  50% {
+    opacity: 1;
+  }
+}
