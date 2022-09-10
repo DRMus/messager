@@ -1,0 +1,10 @@
+@import "~styles/variables";
+@import "~styles/layouts/chat";
+
+.home {
+  height: 100%;
+  background-color: $backgroundBlue;
+  display: flex;
+  justify-content: center;
+  
+}

@@ -12,12 +12,15 @@
   &--avatar {
     display: flex;
     flex-direction: column-reverse;
-    img {
+    width: 33px;
+    margin-right: 13px;
+    .avatar {
       border-radius: 50%;
       width: 33px;
       height: 33px;
-      margin-right: 10px;
-      margin-bottom: 23px;
+      margin-bottom: 5px;
+      font-size: 14px;
+      line-height: 31px;
     }
   }
 

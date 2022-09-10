@@ -6,3 +6,4 @@ export {default as Dialogs} from './dialogs'
 
 export {default as IconReaded} from './iconReaded'
 export {default as UnreadCount} from './unreadCounts'
+export {default as Avatar} from './avatar'

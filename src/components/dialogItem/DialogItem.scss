@@ -3,8 +3,10 @@
 .dialogs--item {
   display: flex;
   flex-direction: row;
-  width: 300px;
+  justify-content: center;
+  width: 360px;
   overflow: hidden;
+  padding: 8px 13px;
 
   &--avatar {
     position: relative;

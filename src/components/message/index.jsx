@@ -5,11 +5,10 @@ import ruLocale from "date-fns/locale/ru";
 import classNames from "classnames";
 
 import "./Message.scss";
-import { IconReaded } from "components";
+import { IconReaded, Avatar } from "components";
 import { Attachments, Bubble } from "./fragments";
 
 function Message({
-  avatar,
   user,
   text,
   date,
@@ -29,14 +28,14 @@ function Message({
     >
       <div className="message--content">
         <div className="message--avatar">
-          <img src={avatar} alt={`Avatar ${user.fullname}`} />
+          {!isTyping && <Avatar user={user} />}
         </div>
         <div className="message--info">
           <div
             className="message--message"
             style={{ flexDirection: attachments ? "column" : "row" }}
           >
-            <Attachments attachments={attachments} text={text}/>
+            <Attachments attachments={attachments} text={text} />
             <Bubble isTyping={isTyping} audio={audio} text={text} />
           </div>
           <IconReaded
