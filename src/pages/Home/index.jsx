@@ -1,14 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { Input } from "antd";
-import { SearchOutlined, SendOutlined } from "@ant-design/icons";
+import {
+  SearchOutlined,
+  SendOutlined,
+  AudioOutlined,
+  PaperClipOutlined,
+} from "@ant-design/icons";
 
-import { Message, Dialogs } from "components";
+import { Message, Dialogs, Emoji } from "components";
 import "./Home.scss";
 
-const prefix = <SearchOutlined className="search--input--prefix" />;
-const suffixMessage = <SendOutlined className="message--input--send"/>;
-
 function Home() {
+  const prefix = <SearchOutlined className="search--input--prefix" />;
+  const suffixMessage = <SendOutlined className="message--input--send" />;
+  const voiceMessage = <AudioOutlined className="message--input--send" />;
+  const emojiMessage = <Emoji className="anticon message--input--send message--input--emoji" />;
+
+
+  const [sendType, setSendType] = useState(voiceMessage);
+
+  const textTyped = (e) => {
+    if (e.target.value) {
+      setSendType(suffixMessage);
+    } else {
+      setSendType(voiceMessage);
+    }
+  };
   return (
     <section className="home">
       <div className="chat">
@@ -181,7 +198,7 @@ function Home() {
               text="Привет, где ты находишься?"
               date={new Date(2022, 8, 5)}
             />
-            
+
             <Message
               user={{
                 _id: "69a329523ce1ec88bf63061863d9cb14",
@@ -193,10 +210,13 @@ function Home() {
             />
           </div>
           <div className="chat--current--input">
+            <PaperClipOutlined className="message--input--send message--input--clip" />
             <Input
+              onChange={(e) => textTyped(e)}
               placeholder="Введите сообщение"
               className="message--input"
-              suffix={suffixMessage}
+              prefix={emojiMessage}
+              suffix={sendType}
             />
           </div>
         </div>
