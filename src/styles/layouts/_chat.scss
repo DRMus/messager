@@ -8,69 +8,6 @@
     width: 70px;
     background-color: $brightBlue;
   }
-  &--sidebar {
-    border-right: 1px solid $hrGray;
-    display: flex;
-    flex-direction: column;
-    width: auto;
-    gap: 20px;
-
-    .sidebar {
-      &--header {
-        padding-left: 8px;
-        width: 330px;
-        display: flex;
-        flex-direction: column;
-        margin: 0 auto;
-        &--icon {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 150px;
-          height: 35px;
-          background-color: $blue;
-          border-radius: 15px 15px 15px 0;
-          margin: 14px 0 25px 0;
-          p {
-            color: $white;
-            font-size: 16px;
-          }
-        }
-        &--search {
-          .search--input {
-            width: 320px;
-            height: 40px;
-            background-color: $searchGray;
-            border: none;
-            border-radius: 5px;
-            input {
-              font-size: 14px;
-              background-color: $searchGray;
-            }
-            &--prefix {
-              margin-right: 5px;
-              opacity: 0.4;
-            }
-          }
-        }
-      }
-    }
-
-    &--dialogs {
-      margin: 0 auto;
-      overflow: auto;
-      .dialogs {
-        &--item {
-          padding-left: 18px;
-          cursor: pointer;
-          &.active,
-          &:hover {
-            background-color: $hoverBlue;
-          }
-        }
-      }
-    }
-  }
   &--current {
     width: 100%;
     &--header {

@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 
-import { Dialogs as BaseDialogs } from "components";
+import { SideBar as BaseDialogs } from "components";
 
 function Dialogs({ items }) {
   const [searchValue, setSearchValue] = useState(null);
-  let filtred = Array.from(items);
+  const [filtred, setFiltred] = useState(Array.from(items));
 
   const onSearchInput = (e) => {
     const value = e.target.value;
-    filtred = filtred.filter((dialog) => dialog.user.fullname.indexOf(value) >= 0);
+    console.log(value)
+    setFiltred(items.filter((dialog) => dialog.user.fullname.toLowerCase().indexOf(value.toLowerCase()) >= 0 ));
     setSearchValue(e.target.value);
   };
 

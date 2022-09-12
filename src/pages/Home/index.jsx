@@ -1,21 +1,21 @@
 import React, { useState } from "react";
-import { Input } from "antd";
 import {
-  SearchOutlined,
   SendOutlined,
   AudioOutlined,
   PaperClipOutlined,
 } from "@ant-design/icons";
+import { Input } from "antd";
 
-import { Message, Dialogs, Emoji } from "components";
+import { Message, Emoji, SideBar } from "components";
+import { Dialogs } from "containers";
 import "./Home.scss";
 
 function Home() {
-  const prefix = <SearchOutlined className="search--input--prefix" />;
   const suffixMessage = <SendOutlined className="message--input--send" />;
   const voiceMessage = <AudioOutlined className="message--input--send" />;
-  const emojiMessage = <Emoji className="anticon message--input--send message--input--emoji" />;
-
+  const emojiMessage = (
+    <Emoji className="anticon message--input--send message--input--emoji" />
+  );
 
   const [sendType, setSendType] = useState(voiceMessage);
 
@@ -30,87 +30,71 @@ function Home() {
     <section className="home">
       <div className="chat">
         {/* <div className="chat--toolbar"></div> */}
-        <div className="chat--sidebar">
-          <div className="sidebar--header">
-            <div className="sidebar--header--icon">
-              <p>Сообщения</p>
-            </div>
-            <div className="sidebar--header--search">
-              <Input
-                placeholder="Поиск..."
-                className="search--input"
-                prefix={prefix}
-              />
-            </div>
-          </div>
-          <div className="chat--sidebar--dialogs">
-            <Dialogs
-              items={[
-                {
-                  user: {
-                    _id: "53443rrvfffe",
-                    fullname: "Чеченец Алан",
-                    isOnline: true,
-                    unreaded: 8,
-                    avatar:
-                      "https://sun7-13.userapi.com/s/v1/ig2/9F5rI2MEEezcIK4zW9D-NZru_yWpuc8lmWmsX96egNo27yoKFldLWRAw31wSKOyfxX2URz5xFpgLC0_alKD-fzoI.jpg?size=50x50&quality=95&crop=192,61,850,850&ava=1",
-                  },
-                  lastMessage: {
-                    text: "Привет, ты где находишься",
-                    isChecked: false,
-                    isMe: false,
-                    created_at: new Date(),
-                  },
-                },
-                {
-                  user: {
-                    _id: "53443rrvfffe",
-                    avatar: "",
-                    fullname: "Чеченец Алан",
-                    isOnline: true,
-                    unreaded: 8,
-                  },
-                  lastMessage: {
-                    text: "Привет, ты где находишься",
-                    isChecked: false,
-                    isMe: false,
-                    created_at: new Date(2022, 10, 11),
-                  },
-                },
-                {
-                  user: {
-                    _id: "53443rrvfffe",
-                    avatar: "",
-                    fullname: "Чеченец Алан",
-                    isOnline: true,
-                    unreaded: 8,
-                  },
-                  lastMessage: {
-                    text: "Привет, ты где находишься",
-                    isChecked: false,
-                    isMe: false,
-                    created_at: new Date(2022, 10, 11),
-                  },
-                },
-                {
-                  user: {
-                    _id: "53443rrvfffe",
-                    avatar: "",
-                    fullname: "Чеченец Алан",
-                    isOnline: true,
-                    unreaded: 8,
-                  },
-                  lastMessage: {
-                    text: "Привет, ты где находишься",
-                    isChecked: false,
-                    isMe: false,
-                    created_at: new Date(2022, 10, 11),
-                  },
-                },
-              ]}
-            />
-          </div>
-        </div>
+        <Dialogs
+          items={[
+            {
+              user: {
+                _id: "53443rrvfffe",
+                fullname: "Хеченец Алан",
+                isOnline: true,
+                unreaded: 8,
+                avatar:
+                  "https://sun7-13.userapi.com/s/v1/ig2/9F5rI2MEEezcIK4zW9D-NZru_yWpuc8lmWmsX96egNo27yoKFldLWRAw31wSKOyfxX2URz5xFpgLC0_alKD-fzoI.jpg?size=50x50&quality=95&crop=192,61,850,850&ava=1",
+              },
+              lastMessage: {
+                text: "Привет, ты где находишься",
+                isChecked: false,
+                isMe: false,
+                created_at: new Date(),
+              },
+            },
+            {
+              user: {
+                _id: "53443rrvfffe",
+                avatar: "",
+                fullname: "Чеченец Алан",
+                isOnline: true,
+                unreaded: 8,
+              },
+              lastMessage: {
+                text: "Привет, ты где находишься",
+                isChecked: false,
+                isMe: false,
+                created_at: new Date(2022, 10, 11),
+              },
+            },
+            {
+              user: {
+                _id: "53443rrvfffe",
+                avatar: "",
+                fullname: "Чеченец Алан",
+                isOnline: true,
+                unreaded: 8,
+              },
+              lastMessage: {
+                text: "Привет, ты где находишься",
+                isChecked: false,
+                isMe: false,
+                created_at: new Date(2022, 10, 11),
+              },
+            },
+            {
+              user: {
+                _id: "53443rrvfffe",
+                avatar: "",
+                fullname: "Чеченец Алан",
+                isOnline: true,
+                unreaded: 8,
+              },
+              lastMessage: {
+                text: "Привет, ты где находишься",
+                isChecked: false,
+                isMe: false,
+                created_at: new Date(2022, 10, 11),
+              },
+            },
+          ]}
+        />
         <div className="chat--current">
           <div className="chat--current--header">
             <div className="chat--current--header--fullname">
