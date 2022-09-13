@@ -8,7 +8,7 @@ function Dialogs({ items }) {
   return (
     <div className="dialogs">
       {orderBy(items, ["lastMessage.created_at"], ["desc"]).map((item, index) => (
-        <DialogItem key={index} user={item.user} message={item.lastMessage} />
+        <DialogItem key={index} user={item.user} message={item.lastMessage} isActive={item.isActive}/>
       ))}
     </div>
   );

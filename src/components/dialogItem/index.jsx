@@ -1,31 +1,35 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import classNames from "classnames";
 import isToday from "date-fns/isToday";
+import parseISO from 'date-fns/parseISO'
 import format from "date-fns/format";
 
 import { IconReaded, UnreadCount } from "components";
 import { Avatar } from "components";
+import { Context } from "context";
+
 import "./DialogItem.scss";
 
 function createDate(created_at) {
   if (isToday(created_at)) {
-    return format(created_at, "HH:mm");
+    return format(parseISO(created_at), "HH:mm");
   } else {
-    return format(created_at, "dd.MM.yy");
+    return format(parseISO(created_at), "dd.MM.yy");
   }
 }
 
-function DialogItem({ user, message }) {
-  const [isActive, setIsActive] = useState(false);
+function DialogItem({ user, message, isActive }) {
+  const {activeHandler} = useContext(Context)
 
-  const activeHandler = () => {
-    setIsActive(!isActive)
-  }
+  const activeToggle = () => {
+    activeHandler(user._id);
+  };
+
 
   return (
     <div
       className={classNames("dialogs--item", { "active": isActive })}
-      onClick={activeHandler}
+      onClick={activeToggle}
     >
       <div
         className={classNames("dialogs--item--avatar", {
