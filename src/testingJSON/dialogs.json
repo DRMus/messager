@@ -1,68 +1,66 @@
 [
-    {
-      "user": {
-        "_id": "53443rrvfffe1",
-        "fullname": "Хеченец Алан",
-        "isOnline": true,
-        "unreaded": 8,
-        "avatar":
-          "https://sun7-13.userapi.com/s/v1/ig2/9F5rI2MEEezcIK4zW9D-NZru_yWpuc8lmWmsX96egNo27yoKFldLWRAw31wSKOyfxX2URz5xFpgLC0_alKD-fzoI.jpg?size=50x50&quality=95&crop=192,61,850,850&ava=1"
-      },
-      "lastMessage": {
-        "text": "Привет, ты где находишься",
-        "isChecked": false,
-        "isMe": false,
-        "created_at": "2022-02-06"
-      },
-      "isActive": false
+  {
+    "user": {
+      "_id": "53443rrvfffe1",
+      "fullname": "Хеченец Алан",
+      "isOnline": true,
+      "unreaded": 8,
+      "avatar": "https://sun7-13.userapi.com/s/v1/ig2/9F5rI2MEEezcIK4zW9D-NZru_yWpuc8lmWmsX96egNo27yoKFldLWRAw31wSKOyfxX2URz5xFpgLC0_alKD-fzoI.jpg?size=50x50&quality=95&crop=192,61,850,850&ava=1"
     },
-    {
-      "user": {
-        "_id": "53443rrvfffe2",
-        "avatar": "",
-        "fullname": "Чеченец Алан",
-        "isOnline": true,
-        "unreaded": 8
-      },
-      "lastMessage": {
-        "text": "Привет, ты где находишься",
-        "isChecked": false,
-        "isMe": false,
-        "created_at": "2021-07-07"
-      },
-      "isActive": false
+    "lastMessage": {
+      "text": "Привет, ты где находишься",
+      "isChecked": false,
+      "isMe": false,
+      "created_at": "2022-02-06"
     },
-    {
-        "user": {
-          "_id": "53443rrvfffe1",
-          "fullname": "Хеченец Алан",
-          "isOnline": true,
-          "unreaded": 8,
-          "avatar":
-            "https://sun7-13.userapi.com/s/v1/ig2/9F5rI2MEEezcIK4zW9D-NZru_yWpuc8lmWmsX96egNo27yoKFldLWRAw31wSKOyfxX2URz5xFpgLC0_alKD-fzoI.jpg?size=50x50&quality=95&crop=192,61,850,850&ava=1"
-        },
-        "lastMessage": {
-          "text": "Привет, ты где находишься",
-          "isChecked": false,
-          "isMe": false,
-          "created_at": "2022-11-11"
-        },
-        "isActive": false
-      },
-      {
-        "user": {
-          "_id": "53443rrvfffe2",
-          "avatar": "",
-          "fullname": "Чеченец Алан",
-          "isOnline": true,
-          "unreaded": 8
-        },
-        "lastMessage": {
-          "text": "Привет, ты где находишься",
-          "isChecked": false,
-          "isMe": false,
-          "created_at": "2022-09-10"
-        },
-        "isActive": false
-      }
-  ]
+    "isActive": false
+  },
+  {
+    "user": {
+      "_id": "53443rrvfffe2",
+      "avatar": "",
+      "fullname": "Чеченец Алан",
+      "isOnline": true,
+      "unreaded": 8
+    },
+    "lastMessage": {
+      "text": "Привет, ты где находишься",
+      "isChecked": false,
+      "isMe": false,
+      "created_at": "2021-07-07"
+    },
+    "isActive": false
+  },
+  {
+    "user": {
+      "_id": "53443rrvfffe1",
+      "fullname": "Хеченец Алан",
+      "isOnline": true,
+      "unreaded": 8,
+      "avatar": "https://sun7-13.userapi.com/s/v1/ig2/9F5rI2MEEezcIK4zW9D-NZru_yWpuc8lmWmsX96egNo27yoKFldLWRAw31wSKOyfxX2URz5xFpgLC0_alKD-fzoI.jpg?size=50x50&quality=95&crop=192,61,850,850&ava=1"
+    },
+    "lastMessage": {
+      "text": "Привет, ты где находишься",
+      "isChecked": false,
+      "isMe": false,
+      "created_at": "2022-11-11"
+    },
+    "isActive": false
+  },
+  {
+    "user": {
+      "_id": "53443rrvfffe2",
+      "avatar": "",
+      "fullname": "Чеченец Алан",
+      "isOnline": true,
+      "unreaded": 8
+    },
+    "lastMessage": {
+      "text": "Привет, ты где находишься",
+      "isChecked": false,
+      "isMe": false,
+      "created_at": "2022-09-10"
+    },
+    "isActive": false
+  }
+]

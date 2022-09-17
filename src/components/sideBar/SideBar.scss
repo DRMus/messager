@@ -9,6 +9,7 @@
 
   .sidebar {
     &--header {
+      height: 114px;
       padding-left: 8px;
       width: 330px;
       display: flex;
@@ -49,6 +50,8 @@
   }
 
   &--dialogs {
+    height: calc(100% - 114px);
+    width: 101%;
     margin: 0 auto;
     overflow: auto;
     .dialogs {

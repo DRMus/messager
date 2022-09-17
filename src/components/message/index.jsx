@@ -18,6 +18,7 @@ function Message({
   isChecked,
   isTyping,
 }) {
+  
   return (
     <div
       className={classNames("message", {

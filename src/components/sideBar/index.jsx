@@ -1,12 +1,15 @@
 import React from "react";
-
 import { Input } from "antd";
+import { Spin } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
+
 import { Dialogs } from "components";
 import "./SideBar.scss";
 
-function SideBar({ items, onSearch }) {
+function SideBar({ items, onSearch, isLoading }) {
   const prefix = <SearchOutlined className="search--input--prefix" />;
+  console.log(isLoading);
+
   return (
     <div className="chat--sidebar">
       <div className="sidebar--header">
@@ -23,7 +26,11 @@ function SideBar({ items, onSearch }) {
         </div>
       </div>
       <div className="chat--sidebar--dialogs">
-        {items.length > 0 ? (
+        {isLoading ? (
+          <div className="dialogs--loading">
+            <Spin tip="Загрузка диалогов..." className="loading--spin" />
+          </div>
+        ) : items.length > 0 ? (
           <Dialogs items={items} />
         ) : (
           <div className="chat--sidebar--dialogs--empty">

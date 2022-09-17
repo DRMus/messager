@@ -1,22 +1,14 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
 
+import { dialogsActions } from "redux/actions";
 import { SideBar as BaseDialogs } from "components";
 import { Context } from "context";
+import { useEffect } from "react";
 
-function Dialogs({ items }) {
+function Dialogs({ fetchDialogs, setCurrentDialog, currentDialogId, items, isLoading }) {
   const [searchValue, setSearchValue] = useState(null);
   const [filtred, setFiltred] = useState(Array.from(items));
-
-  const activeHandler = (id) => {
-    setFiltred(filtred.map(item => {
-      if(item.user._id === id) {
-        item.isActive = !item.isActive
-      } else {
-        item.isActive = false
-      }
-      return item
-    }));
-  };
 
   const onSearchInput = (e) => {
     const value = e.target.value;
@@ -30,13 +22,24 @@ function Dialogs({ items }) {
     setSearchValue(e.target.value);
   };
 
+  useEffect(() => {
+    if (!items.length) {
+      fetchDialogs()
+    } else {
+      setFiltred(Array.from(items))
+    }
+    
+  }, [items])
+
   return (
     <Context.Provider
       value={{
-        activeHandler,
+        setCurrentDialog,
+        currentDialogId
       }}
     >
       <BaseDialogs
+        isLoading={isLoading}
         items={filtred}
         onSearch={onSearchInput}
         searchValue={searchValue}
@@ -45,4 +48,4 @@ function Dialogs({ items }) {
   );
 }
 
-export default Dialogs;
+export default connect(({dialogs}) => dialogs, dialogsActions)(Dialogs);
